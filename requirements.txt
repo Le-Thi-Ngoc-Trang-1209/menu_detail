@@ -1,3 +1,5 @@
 streamlit
+Pillow
 pytesseract
-csv
+python-dotenv
+google-generativeai
