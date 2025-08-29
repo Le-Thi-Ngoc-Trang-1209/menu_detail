@@ -4,11 +4,17 @@ import pytesseract
 import re
 import google.generativeai as genai
 import csv
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+gg_api_key = os.getenv("OPENAI_API_KEY")
+
 
 # Set up additional dts
 pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
-with open(r'api\google_api.txt', 'r') as f:
-    gg_api_key = f.readline()
+#with open(r'api\google_api.txt', 'r') as f:
+#    gg_api_key = f.readline()
 file_path = 'food_detail.csv'
 with open(file_path, newline='', encoding='utf-8') as csvfile:
     reader = csv.reader(csvfile)
